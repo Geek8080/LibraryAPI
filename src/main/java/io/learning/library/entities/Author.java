@@ -1,5 +1,6 @@
 package io.learning.library.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,6 +20,7 @@ public class Author {
     private String name;
 
     @ManyToMany(mappedBy = "authors")
+    @JsonIgnoreProperties("authors")
     private List<Book> books;
 
     public Author(String name) {
