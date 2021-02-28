@@ -1,6 +1,6 @@
 package io.learning.library.controller.advice.user;
 
-import io.learning.library.exception.entities.user.AdminNotFoundException;
+import io.learning.library.exception.user.AdminNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

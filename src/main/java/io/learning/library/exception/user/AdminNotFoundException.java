@@ -1,4 +1,4 @@
-package io.learning.library.exception.entities.user;
+package io.learning.library.exception.user;
 
 public class AdminNotFoundException extends RuntimeException implements UserNotFoundException {
     public AdminNotFoundException(Long id){

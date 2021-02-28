@@ -1,5 +1,6 @@
 package io.learning.library.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,10 +18,8 @@ public class Book {
 
     private String name;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "book_authors",
-                joinColumns = {@JoinColumn(columnDefinition = "fk_book")},
-                inverseJoinColumns = {@JoinColumn(columnDefinition = "fk_author")})
+    @JsonIgnore
+    @ManyToMany
     private List<Author> authors;
 
     private float edition;

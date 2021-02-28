@@ -1,4 +1,4 @@
-package io.learning.library.exception.entities;
+package io.learning.library.exception;
 
 public class BookNotFoundException extends RuntimeException implements EntityNotFoundException {
     public BookNotFoundException(Long id) {
