@@ -54,7 +54,7 @@ public class AdminController {
     }
 
     @PutMapping("/admins/{id}")
-    public ResponseEntity<?> updateAdmin(@RequestBody Admin newAdmin, @PathVariable Long id){
+    public ResponseEntity<EntityModel> updateAdmin(@RequestBody Admin newAdmin, @PathVariable Long id){
         Admin admin = adminRepository.findById(id).map(adm -> {
             if(!newAdmin.getName().equals("")){
                 adm.setName(newAdmin.getName());

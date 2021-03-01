@@ -34,7 +34,7 @@ public class Student {
         return fine*0.5f;
     }
 
-    public LocalDate getExpectedReturnDate(LocalDate issueDate){
+    private LocalDate getExpectedReturnDate(LocalDate issueDate){
         return issueDate.plusMonths(3);
     }
 }

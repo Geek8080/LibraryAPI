@@ -83,14 +83,6 @@ public class AuthorController {
                 .body(authorEntityModel);
     }
 
-    @DeleteMapping("/authors/{id}")
-    ResponseEntity<?> deleteAuthor(@PathVariable Long id){
-        authorRepository.deleteById(id);
-
-        return ResponseEntity
-                .noContent().build();
-    }
-
     @GetMapping("/authors/{id}/books")
     public CollectionModel<EntityModel<Book>> oneBooks(@PathVariable Long id){
         List<EntityModel<Book>> books = authorRepository.findById(id).orElseThrow(() -> new AuthorNotFoundException(id)).

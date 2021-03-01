@@ -20,7 +20,7 @@ public class Author {
     private String name;
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "authors")
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Book> books;
 
     public Author(String name) {
