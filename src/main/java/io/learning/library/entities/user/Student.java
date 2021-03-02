@@ -1,5 +1,6 @@
 package io.learning.library.entities.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.learning.library.entities.Book;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,12 +22,12 @@ public class Student {
     private String name;
 
     @ElementCollection
-    private Map<Book, LocalDate> issueDetails;
+    private Map<Long, LocalDate> issueDetails;
 
     public float getFine(){
         float fine = 0.0f;
 
-        for(Map.Entry<Book, LocalDate> issued: issueDetails.entrySet()) {
+        for(Map.Entry<Long, LocalDate> issued: issueDetails.entrySet()) {
             LocalDate dateIssued = issued.getValue();
             fine += ((getExpectedReturnDate(dateIssued).isBefore(LocalDate.now())) ? ChronoUnit.DAYS.between(LocalDate.now(), getExpectedReturnDate(dateIssued)) : 0);
         }
