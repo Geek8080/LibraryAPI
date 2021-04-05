@@ -19,6 +19,7 @@ import java.util.stream.Collectors;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 @RestController
+@RequestMapping("/api")
 public class AuthorController {
 
     AuthorRepository authorRepository;
