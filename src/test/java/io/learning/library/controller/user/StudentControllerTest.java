@@ -148,7 +148,7 @@ class StudentControllerTest {
 
     @Test
     void one() {
-        mockMvc.perform(MockMvcRequestBuilders.get("/students/{id}", ))
+//        mockMvc.perform(MockMvcRequestBuilders.get("/students/{id}", ))
     }
 
     @Test
